@@ -1,99 +1,166 @@
-/* Reset and remove unwanted background */
-body, header, nav, h1, h2 {
-    background: transparent;
+/* Reset and remove unwanted backgrounds, margins, paddings */
+html, body, header, nav, main, h1, h2 {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Background image and animation on html */
+html {
+    background: url('digitmarkt.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: backgroundScroll 20s linear infinite;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    color: gold;
+    text-align: center;
+    background: transparent !important;
     margin: 0;
     padding: 0;
 }
 
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background: url('digitmarkt.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed; /* parallax effect */
-    color: gold;
-    text-align: center;
-    animation: backgroundScroll 20s linear infinite;
+/* Header and navigation */
+header, nav {
+    background: transparent !important;
+    padding: 15px 0;
 }
 
-/* Header */
-header {
-    padding: 15px;
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px gold;
 }
 
-/* Logo Glow */
-.logo {
-    display: block;
-    margin: 20px auto;
-    max-width: 200px;
-    filter: drop-shadow(0 0 10px gold);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from { filter: drop-shadow(0 0 10px gold); }
-    to { filter: drop-shadow(0 0 25px gold); }
-}
-
-/* Navigation */
-nav {
-    margin-top: 10px;
-}
-
+/* Navigation links */
 nav a {
     color: gold;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 12px;
     font-weight: bold;
+    font-size: 1.1rem;
     transition: text-shadow 0.3s ease;
 }
 
-nav a:hover {
-    text-shadow: 0 0 8px gold;
+nav a:hover,
+nav a:focus {
+    text-shadow: 0 0 12px gold;
+    outline: none;
+}
+
+/* Logo styling */
+.logo {
+    display: block;
+    margin: 30px auto;
+    max-width: 220px;
+    width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 10px gold);
+    animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+    opacity: 0; /* starts hidden for fadeIn */
+}
+
+/* Logo glow animation */
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 10px gold);
+    }
+    to {
+        filter: drop-shadow(0 0 25px gold);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Slogan */
 .slogan {
-    font-size: 1.3rem;
-    margin: 15px;
+    font-size: 1.4rem;
+    margin: 20px 15px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0 0 6px gold;
 }
 
-/* Contact Buttons */
+/* Contact buttons container */
 .contact-buttons {
-    margin: 2em 0;
+    margin: 30px 0;
 }
 
+/* Buttons */
 .contact-buttons a {
     display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 0 12px;
+    padding: 12px 28px;
     border: 2px solid gold;
-    border-radius: 5px;
+    border-radius: 30px;
     background: transparent;
     color: gold;
+    font-weight: bold;
+    font-size: 1rem;
     text-decoration: none;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 6px transparent;
 }
 
-.contact-buttons a:hover {
+.contact-buttons a:hover,
+.contact-buttons a:focus {
     background: gold;
     color: black;
+    box-shadow: 0 0 20px gold;
+    outline: none;
 }
 
-/* Mobile Friendly */
+/* Responsive styles */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
     nav a {
         display: block;
         margin: 8px 0;
+        font-size: 1rem;
     }
+
     .logo {
-        max-width: 150px;
+        max-width: 160px;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+        margin: 15px 10px;
+    }
+
+    .contact-buttons a {
+        margin: 10px 0;
+        width: 80%;
+        padding: 14px 0;
+        font-size: 1.1rem;
     }
 }
 
 /* Background animation */
 @keyframes backgroundScroll {
-    0% { background-position: center center; }
-    50% { background-position: center top; }
-    100% { background-position: center center; }
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center center;
+    }
 }
