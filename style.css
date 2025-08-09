@@ -96,3 +96,12 @@ nav a:hover {
     color: white;
 }
 
+.trademark {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #5C4033; /* Dark brown */
+    background: transparent !important;
+    padding: 0;
+}
+
