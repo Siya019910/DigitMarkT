@@ -3,24 +3,24 @@ html, body, header, nav, main, h1, h2, .logo-container {
     background: transparent !important;
     margin: 0 !important;
     padding: 0 !important;
+    font-style: italic;
+    color: #003366; /* dark blue */
 }
 
-/* Background image and animation on html */
-html {
+/* Set full height for html and body */
+html, body {
+    height: 100%;
+}
+
+/* Background image and animation on body */
+body {
+    font-family: Arial, sans-serif;
     background: url('digitmarkt.jpg') no-repeat center center fixed;
     background-size: cover;
     animation: backgroundScroll 20s linear infinite;
-}
-
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    color: #003366; /* dark blue */
-    font-style: italic;
-    text-align: center;
-    background: transparent !important;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 /* Header and navigation */
@@ -29,12 +29,12 @@ header, nav {
     padding: 15px 0;
 }
 
+/* Header Title */
 header h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
     text-shadow: 0 0 8px #003366;
-    font-style: italic;
     color: #003366;
 }
 
@@ -47,7 +47,6 @@ nav a {
     font-size: 1.1rem;
     transition: text-shadow 0.3s ease;
     background: transparent !important;
-    font-style: italic;
 }
 
 nav a:hover,
@@ -95,11 +94,80 @@ nav a:focus {
 .slogan {
     font-size: 1.4rem;
     margin: 20px 15px;
-    font-style: italic;
     font-weight: bold;
     text-shadow: 0 0 6px #003366;
     background: transparent !important;
     color: #003366;
 }
 
-/* Contact b*
+/* Contact buttons container */
+.contact-buttons {
+    margin: 30px 0;
+    background: transparent !important;
+}
+
+/* Buttons */
+.contact-buttons a {
+    display: inline-block;
+    margin: 0 12px;
+    padding: 12px 28px;
+    border: 2px solid #003366;
+    border-radius: 30px;
+    background: transparent;
+    color: #003366;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 6px transparent;
+}
+
+.contact-buttons a:hover,
+.contact-buttons a:focus {
+    background: #003366;
+    color: white;
+    box-shadow: 0 0 20px #003366;
+    outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 1rem;
+    }
+
+    .logo {
+        max-width: 160px;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+        margin: 15px 10px;
+    }
+
+    .contact-buttons a {
+        margin: 10px 0;
+        width: 80%;
+        padding: 14px 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* Background animation */
+@keyframes backgroundScroll {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center center;
+    }
+}
