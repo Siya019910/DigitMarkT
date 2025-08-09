@@ -1,86 +1,97 @@
-body {
+/* Reset and remove unwanted background */
+body, header, nav, h1, h2 {
+    background: transparent;
     margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
     font-family: Arial, sans-serif;
     background: url('digitmarkt.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed; /* parallax effect */
-    color: #000;
+    color: gold;
+    text-align: center;
     animation: backgroundScroll 20s linear infinite;
 }
 
+/* Header */
 header {
-    background: rgba(255,255,255,0.8);
-    padding: 1em;
-    text-align: center;
+    padding: 15px;
 }
-header h1 {
-    margin: 0;
+
+/* Logo Glow */
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    filter: drop-shadow(0 0 10px gold);
+    animation: glow 2s ease-in-out infinite alternate;
 }
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 10px gold); }
+    to { filter: drop-shadow(0 0 25px gold); }
+}
+
+/* Navigation */
+nav {
+    margin-top: 10px;
+}
+
 nav a {
-    margin: 0 10px;
+    color: gold;
     text-decoration: none;
-    color: #000;
+    margin: 0 8px;
+    font-weight: bold;
+    transition: text-shadow 0.3s ease;
 }
+
+nav a:hover {
+    text-shadow: 0 0 8px gold;
+}
+
+/* Slogan */
 .slogan {
-    text-align: center;
-    margin-top: 2em;
-    background: rgba(255,255,255,0.7);
-    padding: 1em;
-    border-radius: 10px;
+    font-size: 1.3rem;
+    margin: 15px;
 }
+
+/* Contact Buttons */
 .contact-buttons {
-    text-align: center;
     margin: 2em 0;
 }
+
 .contact-buttons a {
     display: inline-block;
     margin: 0 10px;
     padding: 10px 20px;
-    border: 2px solid #000;
+    border: 2px solid gold;
     border-radius: 5px;
     background: transparent;
-    color: #000;
+    color: gold;
     text-decoration: none;
-    transition: background 0.3s;
-}
-.contact-buttons a:hover {
-    background: rgba(0,0,0,0.1);
-}
-.services-list {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-.services-list li {
-    background: rgba(255,255,255,0.7);
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    border-radius: 8px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-form input, form textarea {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-form button {
-    padding: 10px;
-    border: 2px solid #000;
-    background: transparent;
-    cursor: pointer;
-}
-form button:hover {
-    background: rgba(0,0,0,0.1);
+    transition: background 0.3s, color 0.3s;
 }
 
-/* Animation keyframes */
+.contact-buttons a:hover {
+    background: gold;
+    color: black;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+    .logo {
+        max-width: 150px;
+    }
+}
+
+/* Background animation */
 @keyframes backgroundScroll {
     0% { background-position: center center; }
     50% { background-position: center top; }
