@@ -4,7 +4,7 @@ html, body, header, nav, main, h1, h2, .logo-container {
     margin: 0 !important;
     padding: 0 !important;
     font-style: italic;
-    color: #003366; /* dark blue */
+    color: #5C4033; /* dark brown */
 }
 
 /* Set full height for html and body */
@@ -34,13 +34,13 @@ header h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 0 0 8px #003366;
-    color: #003366;
+    text-shadow: 0 0 8px #5C4033;
+    color: #5C4033;
 }
 
 /* Navigation links */
 nav a {
-    color: #003366;
+    color: #5C4033;
     text-decoration: none;
     margin: 0 12px;
     font-weight: bold;
@@ -51,7 +51,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-    text-shadow: 0 0 12px #003366;
+    text-shadow: 0 0 12px #5C4033;
     outline: none;
     background: transparent !important;
 }
@@ -63,111 +63,7 @@ nav a:focus {
     max-width: 220px;
     width: 80%;
     height: auto;
-    filter: drop-shadow(0 0 10px #003366);
+    filter: drop-shadow(0 0 10px #5C4033);
     animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
-    opacity: 0; /* starts hidden for fadeIn */
-}
+    opacity: 0; /* starts hidden for f*
 
-/* Logo glow animation */
-@keyframes glow {
-    from {
-        filter: drop-shadow(0 0 10px #003366);
-    }
-    to {
-        filter: drop-shadow(0 0 25px #003366);
-    }
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Slogan */
-.slogan {
-    font-size: 1.4rem;
-    margin: 20px 15px;
-    font-weight: bold;
-    text-shadow: 0 0 6px #003366;
-    background: transparent !important;
-    color: #003366;
-}
-
-/* Contact buttons container */
-.contact-buttons {
-    margin: 30px 0;
-    background: transparent !important;
-}
-
-/* Buttons */
-.contact-buttons a {
-    display: inline-block;
-    margin: 0 12px;
-    padding: 12px 28px;
-    border: 2px solid #003366;
-    border-radius: 30px;
-    background: transparent;
-    color: #003366;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 6px transparent;
-}
-
-.contact-buttons a:hover,
-.contact-buttons a:focus {
-    background: #003366;
-    color: white;
-    box-shadow: 0 0 20px #003366;
-    outline: none;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-        font-size: 1rem;
-    }
-
-    .logo {
-        max-width: 160px;
-    }
-
-    .slogan {
-        font-size: 1.2rem;
-        margin: 15px 10px;
-    }
-
-    .contact-buttons a {
-        margin: 10px 0;
-        width: 80%;
-        padding: 14px 0;
-        font-size: 1.1rem;
-    }
-}
-
-/* Background animation */
-@keyframes backgroundScroll {
-    0% {
-        background-position: center center;
-    }
-    50% {
-        background-position: center top;
-    }
-    100% {
-        background-position: center center;
-    }
-}
