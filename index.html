@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>DigitMarkT - Contact</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>DigitMarkT - Home</title>
+    <link rel="stylesheet" href="style.css"/>
     <style>
-        /* Moving background */
-        html {
-            background: url('digitmarkt.jpg') no-repeat center center fixed;
-            background-size: cover;
-            animation: backgroundScroll 20s linear infinite;
-        }
-
-        @keyframes backgroundScroll {
-            0% { background-position: center center; }
-            50% { background-position: center top; }
-            100% { background-position: center center; }
-        }
-
-        /* Footer trademark */
-        footer {
-            text-align: center;
+        /* Reset */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
             font-style: italic;
             color: #5C4033; /* dark brown */
+            height: 100%;
+            background: url('digitmarkt.jpg') no-repeat center center fixed;
+            background-size: cover;
+            animation: bgMove 30s linear infinite;
+            text-align: center;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: center top; }
+            50% { background-position: center bottom; }
+            100% { background-position: center top; }
+        }
+
+        header {
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #5C4033;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 8px #5C4033;
+        }
+
+        /* Logo */
+        .logo {
+            display: block;
+            margin: 30px auto;
+            max-width: 220px;
+            width: 80%;
+            height: auto;
+            filter: drop-shadow(0 0 10px #5C4033);
+            animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px #5C4033); }
+            to { filter: drop-shadow(0 0 25px #5C4033); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Slogan */
+        .slogan {
+            font-size: 1.4rem;
+            margin: 20px 15px;
+            font-weight: bold;
+            text-shadow: 0 0 6px #5C4033;
+        }
+
+        /* Contact buttons */
+        .contact-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            border: 2px solid #5C4033;
+            color: #5C4033;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-buttons a:hover {
+            background: #5C4033;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
             padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
             position: fixed;
             bottom: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Center contact details */
-        .contact-details {
-            text-align: center;
-            font-style: italic;
-            color: #5C4033; /* dark brown */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -49,22 +108,22 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Contact Us</h2>
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="logo.png" alt="DigitMarkT Logo" class="logo">
+    </div>
 
-        <div class="contact-details">
-            <p><strong>Address:</strong> 959 Lunga Street, Twala Section, Katlehong 1431</p>
-            <p><strong>WhatsApp:</strong> 064 212 2136</p>
-            <p><strong>Email:</strong> siyabongathomo.tpy@gmail.com</p>
+    <main>
+        <h2 class="slogan">Transforming Ideas into Reality. Your Task Mastered.</h2>
+        <div class="contact-buttons">
+            <a href="https://wa.me/27642122136" class="whatsapp-btn">WhatsApp Me</a>
+            <a href="mailto:siyabongathomo.tpy@gmail.com" class="email-btn">Email Me</a>
         </div>
     </main>
 
-    <!-- Footer Trademark -->
     <footer>
         DigitMarkT™
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
+<script src="scripts.js"></script>
 </html>
-
