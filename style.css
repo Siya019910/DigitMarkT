@@ -23,10 +23,53 @@ body {
     text-align: center;
 }
 
+/* Logo container to center */
+.logo-container {
+    margin-top: 30px;
+}
+
+/* Logo styling */
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 220px;
+    width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 15px #5C4033);
+    animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+    opacity: 0; /* starts hidden for fadeIn */
+    position: relative;
+    z-index: 10; /* make sure logo is above background */
+}
+
+/* Logo glow animation */
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 10px #5C4033);
+    }
+    to {
+        filter: drop-shadow(0 0 25px #5C4033);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Header and navigation */
 header, nav {
     background: transparent !important;
     padding: 15px 0;
+    position: relative;
+    z-index: 10; /* ensure text is above background */
 }
 
 /* Header Title */
@@ -47,6 +90,7 @@ nav a {
     font-size: 1.1rem;
     transition: text-shadow 0.3s ease;
     background: transparent !important;
+    font-style: italic;
 }
 
 nav a:hover,
@@ -56,14 +100,89 @@ nav a:focus {
     background: transparent !important;
 }
 
-/* Logo styling */
-.logo {
-    display: block;
-    margin: 30px auto;
-    max-width: 220px;
-    width: 80%;
-    height: auto;
-    filter: drop-shadow(0 0 10px #5C4033);
-    animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
-    opacity: 0; /* starts hidden for f*
+/* Slogan */
+.slogan {
+    font-size: 1.4rem;
+    margin: 20px 15px;
+    font-weight: bold;
+    text-shadow: 0 0 6px #5C4033;
+    background: transparent !important;
+    color: #5C4033;
+    position: relative;
+    z-index: 10;
+}
 
+/* Contact buttons container */
+.contact-buttons {
+    margin: 30px 0;
+    background: transparent !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Buttons */
+.contact-buttons a {
+    display: inline-block;
+    margin: 0 12px;
+    padding: 12px 28px;
+    border: 2px solid #5C4033;
+    border-radius: 30px;
+    background: transparent;
+    color: #5C4033;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 6px transparent;
+    font-style: italic;
+}
+
+.contact-buttons a:hover,
+.contact-buttons a:focus {
+    background: #5C4033;
+    color: white;
+    box-shadow: 0 0 20px #5C4033;
+    outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 1rem;
+    }
+
+    .logo {
+        max-width: 160px;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+        margin: 15px 10px;
+    }
+
+    .contact-buttons a {
+        margin: 10px 0;
+        width: 80%;
+        padding: 14px 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* Background animation */
+@keyframes backgroundScroll {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center center;
+    }
+}
