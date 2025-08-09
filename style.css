@@ -105,3 +105,8 @@ nav a:hover {
     padding: 0;
 }
 
+main {
+    background: transparent !important;
+}
+
+
