@@ -1,131 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>DigitMarkT - Home</title>
-    <link rel="stylesheet" href="style.css"/>
-    <style>
-        /* Reset */
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            font-style: italic;
-            color: #5C4033; /* dark brown */
-            height: 100%;
-            background: url('digitmarkt.jpg') no-repeat center center fixed;
-            background-size: cover;
-            animation: bgMove 30s linear infinite;
-            text-align: center;
-        }
-
-        @keyframes bgMove {
-            0% { background-position: center top; }
-            50% { background-position: center bottom; }
-            100% { background-position: center top; }
-        }
-
-        header {
-            padding: 15px 0;
-        }
-
-        nav a {
-            color: #5C4033;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-shadow: 0 0 8px #5C4033;
-        }
-
-        /* Logo */
-        .logo {
-            display: block;
-            margin: 30px auto;
-            max-width: 220px;
-            width: 80%;
-            height: auto;
-            filter: drop-shadow(0 0 10px #5C4033);
-            animation: glow 2.5s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
-            opacity: 0;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px #5C4033); }
-            to { filter: drop-shadow(0 0 25px #5C4033); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Slogan */
-        .slogan {
-            font-size: 1.4rem;
-            margin: 20px 15px;
-            font-weight: bold;
-            text-shadow: 0 0 6px #5C4033;
-        }
-
-        /* Contact buttons */
-        .contact-buttons a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            border: 2px solid #5C4033;
-            color: #5C4033;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-buttons a:hover {
-            background: #5C4033;
-            color: white;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.3);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DigitMarkT - Home</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>DigitMarkT</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="porfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>DigitMarkT</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- Logo -->
+<main>
     <div class="logo-container">
         <img src="logo.png" alt="DigitMarkT Logo" class="logo">
     </div>
+    <h2 class="slogan">Transforming Ideas into Reality. Your Task Mastered.</h2>
+    <div class="contact-buttons">
+        <a href="https://wa.me/27642122136">WhatsApp Me</a>
+        <a href="mailto:siyabongathomo.tpy@gmail.com">Email Me</a>
+    </div>
+</main>
 
-    <main>
-        <h2 class="slogan">Transforming Ideas into Reality. Your Task Mastered.</h2>
-        <div class="contact-buttons">
-            <a href="https://wa.me/27642122136" class="whatsapp-btn">WhatsApp Me</a>
-            <a href="mailto:siyabongathomo.tpy@gmail.com" class="email-btn">Email Me</a>
-        </div>
-         <p class="trademark">© 2025 DigitMarkT™</p>
-    </main>
-
-    <footer>
-        DigitMarkT™
-    </footer>
+<footer>
+    © 2025 DigitMarkT™
+</footer>
 </body>
-<script src="scripts.js"></script>
 </html>
