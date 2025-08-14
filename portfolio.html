@@ -6,7 +6,7 @@
 <title>DigitMarkT - Portfolio</title>
 <link rel="stylesheet" href="style.css"/>
 <style>
-/* Portfolio Cards */
+/* Portfolio Styles */
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -17,7 +17,7 @@
 }
 
 .project-card {
-    background: #0B6623;
+    background: #0B6623; /* forest green */
     color: white;
     padding: 40px 20px;
     border-radius: 10px;
@@ -30,7 +30,7 @@
 }
 
 .project-card:hover {
-    background: #87CEEB;
+    background: #87CEEB; /* sky blue */
     color: #0B6623;
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
@@ -51,7 +51,7 @@
     font-size: 0.9rem;
 }
 
-/* Filters */
+/* Filter Buttons */
 .filter-buttons {
     text-align: center;
     margin: 20px 0;
@@ -111,64 +111,6 @@
 @keyframes fadeIn {
     from {opacity:0;}
     to {opacity:1;}
-}
-
-/* Chat Widget */
-#chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #0B6623;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-    line-height: 60px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-#chat-box {
-    display: none;
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: white;
-    color: #0B6623;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    z-index: 1000;
-}
-
-#chat-box header {
-    background: #0B6623;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-#chat-box .messages {
-    padding: 10px;
-    height: 250px;
-    overflow-y: auto;
-    font-size: 0.9rem;
-}
-
-#chat-box input {
-    width: 100%;
-    border: none;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 0.9rem;
 }
 </style>
 </head>
@@ -230,7 +172,7 @@
     </div>
 </div>
 
-<!-- Testimonials -->
+<!-- Testimonials Slider -->
 <div class="testimonials">
     <div class="testimonial-slide active">
         <p>"Amazing work! My website looks fantastic." </p>
@@ -244,14 +186,6 @@
         <p>"Highly recommend DigitMarkT for interactive games."</p>
         <h4>- Client C</h4>
     </div>
-</div>
-
-<!-- Live Chat Widget -->
-<div id="chat-widget">💬</div>
-<div id="chat-box">
-    <header>Chat with DigitMarkT</header>
-    <div class="messages"></div>
-    <input type="text" placeholder="Type your message...">
 </div>
 
 <footer>
@@ -286,16 +220,9 @@ setInterval(() => {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
 }, 4000);
-
-// Chat Widget Toggle
-const chatWidget = document.getElementById('chat-widget');
-const chatBox = document.getElementById('chat-box');
-chatWidget.addEventListener('click', () => {
-    chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
-    chatBox.style.flexDirection = 'column';
-});
 </script>
 </body>
 </html>
+
 
 
