@@ -6,132 +6,26 @@
 <title>DigitMarkT - Portfolio</title>
 <link rel="stylesheet" href="style.css"/>
 <style>
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-style: italic;
-    color: #5C4033;
-    height: 100%;
-    background: url('digitmarkt.jpg') no-repeat center center fixed;
-    background-size: cover;
-    animation: bgMove 30s linear infinite;
-    text-align: center;
+/* Additional portfolio-specific styling */
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-@keyframes bgMove {
-    0% { background-position: center top; }
-    50% { background-position: center bottom; }
-    100% { background-position: center top; }
+.project-card h3 {
+    margin: 5px 0;
 }
 
-header { padding: 15px 0; }
-nav a { color: #5C4033; text-decoration: none; margin: 0 12px; font-weight: bold; }
-nav a:hover { text-shadow: 0 0 8px #5C4033; }
-
-.page-title { font-size: 2rem; margin: 20px 10px; font-weight: bold; text-shadow: 0 0 6px #5C4033; }
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.portfolio-item {
-    background: rgba(255,255,255,0.85);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(92,64,51,0.5);
-    transform: translateY(30px);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.portfolio-item.visible { transform: translateY(0); opacity: 1; }
-.portfolio-item:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(92,64,51,0.8); }
-
-.portfolio-item img { width: 100%; height: 180px; object-fit: cover; }
-.portfolio-content { padding: 15px; }
-.portfolio-content h3 { margin: 0 0 10px; }
-.portfolio-content p { font-size: 0.9rem; margin-bottom: 12px; }
-.portfolio-content span { font-weight: bold; display: block; margin-bottom: 10px; }
-.portfolio-content a {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 2px solid #5C4033;
-    color: #5C4033;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-.portfolio-content a:hover { background: #5C4033; color: white; }
-
-footer { text-align: center; padding: 15px; background: rgba(255,255,255,0.3); margin-top: 30px; font-weight: bold; }
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left:0; top:0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
-}
-.modal-content {
-    background: #fff;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 700px;
-    position: relative;
-    text-align: left;
-}
-.modal-content img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
-.close-btn {
-    position: absolute;
-    top:10px; right:15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #5C4033;
-    cursor: pointer;
-}
-.close-btn:hover { color: #000; }
-
-/* Prev/Next buttons */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #5C4033;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.nav-btn:hover { background: #7D5A3C; }
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
-
-@media(max-width:600px){
-    .page-title{ font-size:1.5rem; }
-    .portfolio-item img{ height:150px; }
-    .modal-content{ margin: 20px; }
-    .nav-btn{ padding:8px 12px; font-size:0.9rem; }
+.project-card p {
+    font-size: 0.9rem;
 }
 </style>
 </head>
 <body>
-
 <header>
-    <h1>DigitMarkT</h1>
+    <h1>DigitMarkT Portfolio</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -140,143 +34,57 @@ footer { text-align: center; padding: 15px; background: rgba(255,255,255,0.3); m
     </nav>
 </header>
 
-<h2 class="page-title">My Creative Portfolio</h2>
+<main>
+    <div class="portfolio-container">
+        <!-- Example Project 1 -->
+        <div class="project-card" onclick="window.location.href='todo-app/index.html'">
+            <img src="images/todo-app.jpg" alt="To-Do List App">
+            <h3>To-Do List App</h3>
+            <p>Organize tasks with a stylish forest green & sky blue design.</p>
+        </div>
 
-<div class="portfolio-grid">
+        <!-- Example Project 2 -->
+        <div class="project-card" onclick="window.location.href='quiz-game/index.html'">
+            <img src="images/quiz-game.jpg" alt="Quiz Game">
+            <h3>Mobile Quiz Game</h3>
+            <p>Test your knowledge with sound effects, timer, and leaderboard.</p>
+        </div>
 
-    <!-- Portfolio Items -->
-    <div class="portfolio-item" data-index="0">
-        <img src="project1.jpg" alt="Website Development">
-        <div class="portfolio-content">
-            <h3>Website Development</h3>
-            <p>Responsive website with modern layout and interactive features.</p>
-            <span>Technologies: HTML, CSS, JavaScript</span>
-            <a onclick="openModal(0)">View Project</a>
+        <!-- Example Project 3 -->
+        <div class="project-card" onclick="window.location.href='finance-tracker/index.html'">
+            <img src="images/finance-tracker.jpg" alt="Finance Tracker">
+            <h3>Finance Tracker</h3>
+            <p>Track income, expenses, and generate charts with ease.</p>
+        </div>
+
+        <!-- Example Project 4 -->
+        <div class="project-card" onclick="window.location.href='budget-tracker/index.html'">
+            <img src="images/budget-tracker.jpg" alt="Budget Tracker">
+            <h3>Budget Tracker</h3>
+            <p>Plan your monthly budget and monitor expenses efficiently.</p>
+        </div>
+
+        <!-- Example Project 5 -->
+        <div class="project-card" onclick="window.location.href='fractal-tree/index.html'">
+            <img src="images/fractal-tree.jpg" alt="Fractal Tree Animation">
+            <h3>Fractal Tree Animation</h3>
+            <p>Interactive animated fractal tree with colorful effects.</p>
+        </div>
+
+        <!-- Example Project 6 -->
+        <div class="project-card" onclick="window.location.href='space-shooter/index.html'">
+            <img src="images/space-shooter.jpg" alt="Space Shooter Game">
+            <h3>Space Shooter Game</h3>
+            <p>Exciting space adventure with touch controls and levels.</p>
         </div>
     </div>
-
-    <div class="portfolio-item" data-index="1">
-        <img src="project2.jpg" alt="Mobile Application">
-        <div class="portfolio-content">
-            <h3>Mobile Application</h3>
-            <p>Cross-platform mobile app with user-friendly navigation.</p>
-            <span>Technologies: Flutter, Android Studio, JavaScript</span>
-            <a onclick="openModal(1)">View Project</a>
-        </div>
-    </div>
-
-    <div class="portfolio-item" data-index="2">
-        <img src="project3.jpg" alt="Graphic Design">
-        <div class="portfolio-content">
-            <h3>Graphic Design</h3>
-            <p>Logos, flyers, and branding materials for clients.</p>
-            <span>Technologies: Illustrator, Photoshop, Canva</span>
-            <a onclick="openModal(2)">View Project</a>
-        </div>
-    </div>
-
-    <div class="portfolio-item" data-index="3">
-        <img src="project4.jpg" alt="Custom Software">
-        <div class="portfolio-content">
-            <h3>Custom Software</h3>
-            <p>Desktop and cloud solutions for efficiency and usability.</p>
-            <span>Technologies: Python, Java, SQLite, Cloud APIs</span>
-            <a onclick="openModal(3)">View Project</a>
-        </div>
-    </div>
-
-</div>
-
-<!-- Modal -->
-<div id="projectModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <button class="nav-btn prev-btn" onclick="prevProject()">&#8592; Prev</button>
-        <button class="nav-btn next-btn" onclick="nextProject()">Next &#8594;</button>
-        <h2 id="modal-title"></h2>
-        <img id="modal-image" src="" alt="">
-        <p id="modal-desc"></p>
-        <p id="modal-features"></p>
-    </div>
-</div>
+</main>
 
 <footer>
-    © 2025 DigitMarkT™ - All Rights Reserved
+    © 2025 DigitMarkT™
 </footer>
-
-<script>
-// Project Data
-const projects = [
-    {
-        title: "Website Development",
-        img: "project1.jpg",
-        desc: "Full description: Responsive website with modern layout, interactive elements, and mobile-first design.",
-        features: "Features: Responsive layout, animations, user interaction, SEO-ready."
-    },
-    {
-        title: "Mobile Application",
-        img: "project2.jpg",
-        desc: "Full description: Mobile app for Android and cross-platform devices with clean UI and smooth navigation.",
-        features: "Features: Cross-platform, interactive, optimized performance."
-    },
-    {
-        title: "Graphic Design",
-        img: "project3.jpg",
-        desc: "Full description: Professional graphic design including logos, flyers, and branding materials.",
-        features: "Features: Branding, logo design, marketing materials."
-    },
-    {
-        title: "Custom Software",
-        img: "project4.jpg",
-        desc: "Full description: Desktop and cloud software solutions designed for workflow efficiency, security, and usability.",
-        features: "Features: Custom software, automation, cloud integration."
-    }
-];
-
-let currentIndex = 0;
-const modal = document.getElementById('projectModal');
-const modalTitle = document.getElementById('modal-title');
-const modalImage = document.getElementById('modal-image');
-const modalDesc = document.getElementById('modal-desc');
-const modalFeatures = document.getElementById('modal-features');
-
-function openModal(index){
-    currentIndex = index;
-    showProject(currentIndex);
-    modal.style.display = 'flex';
-}
-function closeModal(){ modal.style.display='none'; }
-function showProject(index){
-    modalTitle.textContent = projects[index].title;
-    modalImage.src = projects[index].img;
-    modalDesc.textContent = projects[index].desc;
-    modalFeatures.textContent = projects[index].features;
-}
-function prevProject(){
-    currentIndex = (currentIndex === 0) ? projects.length -1 : currentIndex -1;
-    showProject(currentIndex);
-}
-function nextProject(){
-    currentIndex = (currentIndex === projects.length -1) ? 0 : currentIndex +1;
-    showProject(currentIndex);
-}
-window.onclick = function(event){
-    if(event.target === modal){ closeModal(); }
-};
-
-// Scroll fade-in animation
-const items = document.querySelectorAll('.portfolio-item');
-const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    items.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        if(itemTop < triggerBottom){ item.classList.add('visible'); }
-    });
-};
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-</script>
-
 </body>
 </html>
+
+
 
