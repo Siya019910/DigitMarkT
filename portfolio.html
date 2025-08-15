@@ -4,9 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DigitMarkT - Portfolio</title>
-<link rel="stylesheet" href="style.css"/>
 <style>
-/* Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -15,8 +13,6 @@ body {
     color: #0B6623; /* forest green */
     text-align: center;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
@@ -36,30 +32,6 @@ header nav a:hover {
     text-shadow: 0 0 6px #ffffff;
 }
 
-/* Portfolio */
-.filter-buttons {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.filter-buttons button {
-    background: #0B6623;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.filter-buttons button:hover,
-.filter-buttons button.active {
-    background: #87CEEB;
-    color: #0B6623;
-}
-
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -70,67 +42,42 @@ header nav a:hover {
 }
 
 .project-card {
-    background: #0B6623; /* forest green */
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    position: relative;
     overflow: hidden;
-}
-
-.project-card:hover {
-    background: #87CEEB; /* sky blue */
-    color: #0B6623;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .project-card img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-/* Testimonials */
-.testimonials {
-    max-width: 900px;
-    margin: 50px auto;
-    position: relative;
-    overflow: hidden;
     border-radius: 10px;
-}
-
-.testimonial-slide {
-    display: none;
-    padding: 20px;
-    background: rgba(11,102,35,0.8);
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.testimonial-slide.active {
     display: block;
-    animation: fadeIn 1s ease forwards;
+    transition: transform 0.3s ease;
 }
 
-.testimonial-slide p {
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay description */
+.project-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
     font-size: 1rem;
-    margin-bottom: 10px;
 }
 
-.testimonial-slide h4 {
-    font-weight: bold;
-    margin: 0;
-}
-
-@keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
+.project-card:hover .project-description {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 footer {
@@ -150,107 +97,9 @@ footer {
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    </n
 
-<!-- Filter Buttons -->
-<div class="filter-buttons">
-    <button class="active" data-filter="all">All</button>
-    <button data-filter="web">Web</button>
-    <button data-filter="app">App</button>
-    <button data-filter="game">Game</button>
-</div>
 
-<!-- Portfolio Projects -->
-<div class="portfolio-container">
-    <div class="project-card" data-type="app" onclick="window.location.href='todo-app/index.html'">
-        <img src="images/todo-app.jpg" alt="To-Do List App">
-        <h3>To-Do List App</h3>
-        <p>Organize tasks with a stylish forest green & sky blue design.</p>
-    </div>
-
-    <div class="project-card" data-type="game" onclick="window.location.href='quiz-game/index.html'">
-        <img src="images/quiz-game.jpg" alt="Quiz Game">
-        <h3>Quiz Game</h3>
-        <p>Test your knowledge with sound effects, timer, and leaderboard.</p>
-    </div>
-
-    <div class="project-card" data-type="web" onclick="window.location.href='finance-tracker/index.html'">
-        <img src="images/finance-tracker.jpg" alt="Finance Tracker">
-        <h3>Finance Tracker</h3>
-        <p>Track income, expenses, and generate charts with ease.</p>
-    </div>
-
-    <div class="project-card" data-type="web" onclick="window.location.href='budget-tracker/index.html'">
-        <img src="images/budget-tracker.jpg" alt="Budget Tracker">
-        <h3>Budget Tracker</h3>
-        <p>Plan your monthly budget and monitor expenses efficiently.</p>
-    </div>
-
-    <div class="project-card" data-type="app" onclick="window.location.href='fractal-tree/index.html'">
-        <img src="images/fractal-tree.jpg" alt="Fractal Tree Animation">
-        <h3>Fractal Tree Animation</h3>
-        <p>Interactive animated fractal tree with colorful effects.</p>
-    </div>
-
-    <div class="project-card" data-type="game" onclick="window.location.href='space-shooter/index.html'">
-        <img src="images/space-shooter.jpg" alt="Space Shooter Game">
-        <h3>Space Shooter Game</h3>
-        <p>Exciting space adventure with touch controls and levels.</p>
-    </div>
-</div>
-
-<!-- Testimonials -->
-<div class="testimonials">
-    <div class="testimonial-slide active">
-        <p>"Amazing work! My website looks fantastic." </p>
-        <h4>- Client A</h4>
-    </div>
-    <div class="testimonial-slide">
-        <p>"Professional and timely delivery of the app project."</p>
-        <h4>- Client B</h4>
-    </div>
-    <div class="testimonial-slide">
-        <p>"Highly recommend DigitMarkT for interactive games."</p>
-        <h4>- Client C</h4>
-    </div>
-</div>
-
-<footer>
-    © 2025 DigitMarkT™
-</footer>
-
-<script>
-// Portfolio Filter
-const filterButtons = document.querySelectorAll('.filter-buttons button');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        projectCards.forEach(card => {
-            if(filter === 'all' || card.dataset.type === filter){
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
-
-// Testimonials Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-slide');
-setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-}, 4000);
-</script>
-</body>
-</html>
 
 
 
