@@ -10,36 +10,41 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: url('digitmarkt.jpg') no-repeat center center fixed;
+    background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
-    position: relative;
 }
 
-/* Overlay for readability */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: -1;
-}
-
-/* Header */
+/* Header with Logo and Name */
 header {
-    background: black(255,215,0,0.9); /* black */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 15px 30px;
+    padding: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-top img {
+    width: 80px;
+    height: auto;
+}
+
+.header-top h1 {
+    font-size: 36px;
     color: gold;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    margin-top: 15px;
 }
 
 nav a {
@@ -51,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-    text-shadow: 0 0 8px black;
+    text-shadow: 0 0 8px gold;
 }
 
 /* Main Section */
@@ -63,38 +68,26 @@ main {
     padding: 50px 20px;
 }
 
-.logo-container {
-    margin-bottom: 30px;
-}
-
-.logo {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    transition: transform 0.5s;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
 .slogan {
     font-size: 1.8rem;
     color: gold;
     margin: 20px 0;
-    text-shadow: 0 0 10px black;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
 }
 
 /* Contact Buttons */
+.contact-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .contact-buttons a {
     display: inline-block;
-    margin: 15px;
     padding: 12px 25px;
-    background: black;
-    color: gold;
+    background: gold;
+    color: black;
     font-weight: bold;
     text-decoration: none;
     border-radius: 25px;
@@ -109,8 +102,8 @@ main {
 
 /* Footer */
 footer {
-    background: black(255,215,0,0.9);
-    color: gold;
+    background: gold;
+    color: black;
     padding: 15px;
     font-weight: bold;
     margin-top: 30px;
@@ -118,21 +111,15 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    header {
+    .header-top {
         flex-direction: column;
-        gap: 10px;
     }
 
-    .logo {
-        width: 150px;
-    }
-
-    .slogan {
-        font-size: 1.4rem;
+    .header-top h1 {
+        font-size: 28px;
     }
 
     .contact-buttons a {
-        margin: 10px 5px;
         padding: 10px 20px;
     }
 }
@@ -141,7 +128,10 @@ footer {
 <body>
 
 <header>
-    <h1>DigitMarkT</h1>
+    <div class="header-top">
+        <img src="logo.png" alt="DigitMarkT Logo">
+        <h1>DigitMarkT</h1>
+    </div>
     <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -151,9 +141,6 @@ footer {
 </header>
 
 <main>
-    <div class="logo-container">
-        <img src="logo.jpg" alt="DigitMarkT Logo" class="logo">
-    </div>
     <h2 class="slogan">Transforming Ideas into Reality. Your Task Mastered.</h2>
     <div class="contact-buttons">
         <a href="https://wa.me/27642122136">WhatsApp Me</a>
@@ -164,16 +151,6 @@ footer {
 <footer>
     © 2025 DigitMarkT™
 </footer>
-
-<script>
-/* Fade in slogan after page load */
-window.addEventListener('DOMContentLoaded', () => {
-    const slogan = document.querySelector('.slogan');
-    setTimeout(() => {
-        slogan.style.opacity = 1;
-    }, 500);
-});
-</script>
 
 </body>
 </html>
