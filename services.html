@@ -5,10 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DigitMarkT - Services</title>
 <link rel="stylesheet" href="style.css"/>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url('services-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-top img {
+    width: 80px;
+    height: auto;
+}
+
+.header-top h1 {
+    font-size: 36px;
+    color: gold;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-shadow: 0 0 8px gold;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.5);
+}
+
+main h2 {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+/* Service List */
+.services {
+    text-align: left;
+    color: white;
+}
+
+.services h3 {
+    color: gold;
+    margin-top: 20px;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services ul li {
+    margin: 8px 0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.services ul li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: gold;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    color: gold;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+    }
+    .header-top h1 {
+        font-size: 28px;
+    }
+}
+</style>
 </head>
 <body>
+
 <header>
-    <h1>DigitMarkT</h1>
+    <div class="header-top">
+        <img src="logo.png" alt="DigitMarkT Logo">
+        <h1>DigitMarkT™</h1>
+    </div>
     <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -18,17 +139,47 @@
 </header>
 
 <main>
-    <h2>Our Services</h2>
-    <ul style="list-style:none; padding:0;">
-        <li>Web Development</li>
-        <li>Web Design</li>
-        <li>Application Development</li>
-        <li>Consulting Services</li>
-    </ul>
+    <h2>Our Services – Empowering Your Digital Success</h2>
+    <div class="services">
+        <h3>🌐 Web Development</h3>
+        <ul>
+            <li>HTML & HTML5, CSS & CSS3, JavaScript</li>
+            <li>Responsive and modern website layouts</li>
+            <li>UX-focused design with smooth transitions</li>
+        </ul>
+
+        <h3>📱 App Development & Strategies</h3>
+        <ul>
+            <li>User-centric app design and development</li>
+            <li>Integration of APIs, data input, and processing</li>
+            <li>Application layout, design thinking, and UX principles</li>
+        </ul>
+
+        <h3>💾 Backend & Data Management</h3>
+        <ul>
+            <li>Data storage, management, and analysis</li>
+            <li>Server-side/backend development support</li>
+            <li>GitHub collaboration and version control</li>
+        </ul>
+
+        <h3>📈 Business Development & Marketing</h3>
+        <ul>
+            <li>Marketing strategies for your web and mobile apps</li>
+            <li>Business growth planning and digital solutions</li>
+        </ul>
+
+        <h3>🤝 Collaboration & Design Thinking</h3>
+        <ul>
+            <li>Team collaboration and project management</li>
+            <li>UX and UI principles applied to real-world projects</li>
+            <li>Creating intuitive and engaging digital experiences</li>
+        </ul>
+    </div>
 </main>
 
 <footer>
-    © 2025 DigitMarkT™
+    © 2025 DigitMarkT™ | Transforming Ideas into Reality
 </footer>
+
 </body>
 </html>
