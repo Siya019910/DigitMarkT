@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DigitMarkT - Home</title>
-<link rel="stylesheet" href="style.css"/>
 <style>
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,6 +12,9 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header with Logo and Name */
@@ -22,6 +23,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background: rgba(0, 0, 0, 0); /* transparent, no shadow */
 }
 
 .header-top {
@@ -40,6 +42,7 @@ header {
     color: gold;
     margin: 0;
     font-weight: bold;
+    text-shadow: none; /* permanently removed */
 }
 
 /* Navigation */
@@ -53,25 +56,66 @@ nav a {
     font-weight: bold;
     margin: 0 15px;
     transition: 0.3s;
+    text-shadow: none; /* permanently removed */
 }
 
 nav a:hover {
-    text-shadow: 0 0 8px gold;
+    text-shadow: 0 0 8px gold; /* subtle hover glow kept */
 }
 
 /* Main Section */
 main {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 50px 20px;
+    justify-content: flex-start;
+    padding: 40px 20px;
 }
 
-.slogan {
-    font-size: 1.8rem;
+/* Intro/Message Box */
+.intro-message {
+    max-width: 800px;
+    background: rgba(0,0,0,0.25);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: none;
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.intro-message h2 {
     color: gold;
-    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Animated glowing underline */
+.intro-message h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background: gold;
+    animation: underlineExpand 2s ease forwards, glowPulse 2s ease-in-out 2s infinite;
+    border-radius: 2px;
+}
+
+@keyframes underlineExpand {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px gold, 0 0 10px gold; }
+    50% { box-shadow: 0 0 15px gold, 0 0 30px gold; }
+    100% { box-shadow: 0 0 5px gold, 0 0 10px gold; }
 }
 
 /* Contact Buttons */
@@ -80,14 +124,13 @@ main {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .contact-buttons a {
     display: inline-block;
     padding: 12px 25px;
-    background: rgba(0, 0, 0, 0.6); /* black with 60% opacity */
-;
+    background: rgba(0, 0, 0, 0.6);
     color: gold;
     font-weight: bold;
     text-decoration: none;
@@ -103,12 +146,11 @@ main {
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.6); /* black with 60% opacity */
-;
+    background: rgba(0, 0, 0, 0.3);
     color: gold;
     padding: 15px;
     font-weight: bold;
-    margin-top: 30px;
+    text-align: center;
 }
 
 /* Responsive */
@@ -121,8 +163,8 @@ footer {
         font-size: 28px;
     }
 
-    .contact-buttons a {
-        padding: 10px 20px;
+    .intro-message {
+        text-align: center;
     }
 }
 </style>
@@ -143,7 +185,14 @@ footer {
 </header>
 
 <main>
-    <h2 class="slogan">Transforming Ideas into Reality. Your Task Mastered.</h2>
+    <div class="intro-message">
+        <h2>🌐 Welcome to DigitMarkT™ — transforming ideas into reality.</h2>
+        <p>At DigitMarkT, we specialize in delivering comprehensive digital solutions that help businesses thrive in the modern world. From full-stack website development and custom applications to branding materials such as landing pages, posters, and business cards, we bring innovation and creativity to every project.</p>
+        <p>Our team leverages expertise in <strong>HTML, CSS, JavaScript, and Python</strong> to create responsive, mobile-friendly, and visually striking digital experiences that reflect your brand’s identity.</p>
+        <p>We are committed to turning your vision into reality, providing solutions that not only look great but also drive growth and engagement.</p>
+        <p>Partner with DigitMarkT™ and take your business to the next digital level.</p>
+    </div>
+
     <div class="contact-buttons">
         <a href="https://wa.me/27642122136">WhatsApp Me</a>
         <a href="mailto:siyabongathomo.tpy@gmail.com">Email Me</a>
