@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DigitMarkT - Contact</title>
+<title>DigitMarkT - Home</title>
 <link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -14,19 +14,23 @@ body {
     background: url('digitmarkt.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.0); /* remove shadow permanently */
     padding: 20px;
+    text-align: center;
 }
 
 header h1 {
     color: gold;
     margin: 0;
     font-weight: bold;
+    text-shadow: none;
 }
 
 nav a {
@@ -34,66 +38,84 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     margin: 0 15px;
+    text-shadow: none;
     transition: 0.3s;
 }
 
 nav a:hover {
-    text-shadow: 0 0 8px gold;
+    text-decoration: underline;
 }
 
 /* Main Content */
 main {
-    padding: 50px 20px;
+    padding: 60px 20px;
+    flex: 1; /* pushes footer to bottom */
 }
 
 main h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: gold;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.contact-info {
+main p.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+main p.address {
+    font-size: 1rem;
+    color: #ffd700cc;
+    margin-bottom: 40px;
+}
+
+/* Call to Action Buttons */
+.cta-buttons {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
 }
 
-.contact-item {
+.cta-btn {
     background: rgba(0, 0, 0, 0.4);
-    padding: 15px 25px;
-    border-radius: 25px;
+    padding: 15px 30px;
+    border-radius: 30px;
     color: gold;
     font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
     box-shadow: 0 4px 15px rgba(255,215,0,0.5);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     transition: all 0.3s ease;
 }
 
-.contact-item:hover {
+.cta-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255,215,0,0.8);
 }
 
-.contact-item i {
+.cta-btn i {
     font-size: 1.5rem;
 }
 
-/* Footer */
+/* Footer with shadow at bottom only */
 footer {
     background: rgba(0, 0, 0, 0.5);
     color: gold;
     padding: 15px;
     font-weight: bold;
-    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.7); /* shadow at bottom only */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .contact-item {
+    .cta-btn {
         width: 90%;
+        justify-content: center;
     }
 }
 </style>
@@ -111,19 +133,16 @@ footer {
 </header>
 
 <main>
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-        <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            959 Lunga Street, Twala Section, Katlehong 1431
-        </div>
-        <a class="contact-item" href="https://wa.me/27642122136">
+    <h2>Welcome to DigitMarkT™ — transforming ideas into reality</h2>
+        <p class="address"><i class="fas fa-map-marker-alt"></i> 959 Lunga Street, Twala Section, Katlehong, 1431</p>
+    <div class="cta-buttons">
+        <a class="cta-btn" href="https://wa.me/27642122136">
             <i class="fab fa-whatsapp"></i>
-            WhatsApp: 064 212 2136
+            Chat with us on WhatsApp
         </a>
-        <a class="contact-item" href="mailto:siyabongathomo.tpy@gmail.com">
+        <a class="cta-btn" href="mailto:siyabongathomo.tpy@gmail.com">
             <i class="fas fa-envelope"></i>
-            siyabongathomo.tpy@gmail.com
+            Email Us
         </a>
     </div>
 </main>
