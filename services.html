@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -72,40 +72,43 @@ main {
     padding: 30px 20px;
 }
 
-.slogan {
-    font-size: 1.8rem;
-    color: gold;
-    margin: 20px 0;
-}
-
-/* Services/Message Box */
-.services {
+/* Unified Message Box */
+.message-box {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
-    background: rgba(0,0,0,0.25); /* ✅ lighter & more transparent */
-    border-radius: 12px;
-    box-shadow: none;
-}
-
-.services h2 {
-    color: gold;
-    margin-bottom: 15px;
-}
-
-.services p, .services ul, .services li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: white;
+    padding: 25px 30px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255,215,0,0.3);
     text-align: left;
+    color: white;
+    line-height: 1.6;
 }
 
-.services ul {
+.message-box h2 {
+    color: gold;
+    font-size: 1.8rem;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.message-box .sub-text {
+    display: block;
+    font-size: 1.5rem;
+    color: gold;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.message-box ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin: 10px 0;
 }
 
-.services ul li::before {
+.message-box ul li::before {
     content: "✔ ";
     color: gold;
 }
@@ -158,6 +161,14 @@ footer {
     .contact-buttons a {
         padding: 10px 20px;
     }
+
+    .message-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .message-box .sub-text {
+        font-size: 1.3rem;
+    }
 }
 </style>
 </head>
@@ -177,17 +188,19 @@ footer {
 </header>
 
 <main>
-    <h2 class="slogan">🌐 Welcome to DigitMarkT™ — Transforming Ideas into Reality. Your Tasks Mastered.</h2>
-
-    <section class="services">
+    <section class="message-box">
+        <h2>🌐 Welcome to DigitMarkT™ — Transforming Ideas into Reality. Your Tasks Mastered.</h2>
         <p>At DigitMarkT, we turn your vision into powerful digital solutions. Our services include:</p>
         <ul>
             <li>Full-stack website development</li>
             <li>Custom applications</li>
             <li>Business branding (posters, landing pages, business cards & more)</li>
         </ul>
+
         <p>With expertise in HTML, CSS, JavaScript, and Python, we build mobile-friendly, responsive, and innovative projects that help businesses stand out.</p>
+
         <p>💡 Whether you’re starting a brand, upgrading your online presence, or looking for a custom solution — DigitMarkT is here to make it happen.</p>
+
         <p>📞 Contact us today and let’s build something extraordinary together!</p>
     </section>
 
